@@ -13,5 +13,7 @@
                 break;
             }
         }
-        System.out.println("impossible");
+        if (!stop) {
+            System.out.println("impossible");
+        }
     }
