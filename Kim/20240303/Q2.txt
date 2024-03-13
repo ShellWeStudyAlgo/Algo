@@ -1,19 +1,10 @@
-    public static void main(String[] args) {
-        int c = 130000;
-        boolean stop = false;
-        for (int i = 1; i < c; i++) {
-            for (int j = 1; j < c; j++) {
-                if ((i * i + j * j) == c * c) {
-                    System.out.println("true : " + i + ", " + j);
-                    stop = true;
-                    break;
-                }
+public String solution(int input) {
+    for (int i = 1; i < input; i++) {
+        for (int j = 1; j < input; j++) {
+            if ((i * i + j * j) == input * input) {
+                return i + " " + j + " ";
             }
-            if (stop) {
-                break;
-            }
-        }
-        if (!stop) {
-            System.out.println("impossible");
         }
     }
+    return "impossible";
+}
