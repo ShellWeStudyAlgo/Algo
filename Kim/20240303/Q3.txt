@@ -1,0 +1,16 @@
+public int[] solution(int a, int b) {
+    int min = 0;
+    int max = (int) IntStream.rangeClosed(a > b ? a : b, a * b).filter(c -> c % a == 0 && c % b == 0).min().getAsInt();
+    boolean stop = false;
+    int[] arrayA = IntStream.rangeClosed(2, a).filter(c -> a % c == 0).toArray();
+    int[] arrayB = IntStream.rangeClosed(2, b).filter(c -> b % c == 0).toArray();
+    for (int x : arrayA) {
+        for (int y : arrayB) {
+            if (x == y) {
+                min = x;
+                return new int[]{min, max};
+            }
+        }
+    }
+    return new int[]{min, max};
+}

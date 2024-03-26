@@ -1,0 +1,12 @@
+public int solution() {
+    return (int) IntStream.rangeClosed(1, 30).boxed().map(a -> {
+                List<Integer> list = new ArrayList<>();
+                for (int i = 1; i <= 40; i++) {
+                    for (int j = 1; j <= 30; j++) {
+                        list.add(205 * a + 82 * i + 30 * j);
+                    }
+                }
+                return list.stream().distinct().flatMapToInt(IntStream::of).toArray();
+            }
+    ).flatMapToInt(IntStream::of).distinct().count();
+}
